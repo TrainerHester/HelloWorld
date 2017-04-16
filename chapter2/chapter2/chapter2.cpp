@@ -17,12 +17,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	stack integerStack;
 	point* temp;
 	integerStack.initialize();
-	point** p = new point*[20];
+	point po[20];
+	//point** p = new point*[20];
 	for (int i = 0; i < 20; i++) {
-		p[i] = new point;
-		p[i]->x = i;
-		p[i]->y = i;
-		integerStack.push(p[i]);
+		po[i].x = i;
+		po[i].y = i;
+		integerStack.push(&po[i]);
 	}
 	while ((temp = (point*)integerStack.pop()) != 0) {
 		temp->print();
